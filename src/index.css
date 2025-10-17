@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small custom */
+:root{
+  --morenbe-blue: #1e40ff;
+  --morenbe-sky: #60a5fa;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
