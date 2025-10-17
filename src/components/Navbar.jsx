@@ -7,7 +7,7 @@ export default function Navbar({ onShopClick }) {
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-morenbeBlue text-white flex items-center justify-center font-bold">M</div>
           <div>
-            <h1 className="text-lg font-semibold text-morenbeBlue">Morenbe Grocery</h1>
+            <h1 className="text-lg font-semibold text-morenbeBlue">Morenbee Grocery</h1>
             <p className="text-xs text-gray-500">Packaged foods & essentials</p>
           </div>
         </div>
