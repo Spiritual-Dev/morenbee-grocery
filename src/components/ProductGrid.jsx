@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 /* Full product list provided (53 items). Blank numbers filled with "TBD Item X" so we preserve 1..53 */
 const PRODUCTS = [
-  { id: 1, name: "Kullikulli", price: "₦500", img: "https://source.unsplash.com/600x600/?peanuts" },
+  { id: 1, name: "Kullikulli", price: "₦500", img: "dennis.jpg" },
   { id: 2, name: "Measured sugar", price: "₦900", img: "https://source.unsplash.com/600x600/?sugar" },
   { id: 3, name: "Crates of Egg", price: "₦6,000", img: "https://source.unsplash.com/600x600/?eggs" },
   { id: 4, name: "Bags of rice", price: "₦25,000", img: "https://source.unsplash.com/600x600/?rice,bag" },
