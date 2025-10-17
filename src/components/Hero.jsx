@@ -6,7 +6,7 @@ export default function Hero({ onShopClick }) {
     <header className="pt-20">
       <section className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 py-16">
         <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-morenbeBlue leading-tight">Morenbe Grocery Store</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-morenbeBlue leading-tight">Morenbee Grocery Store</h2>
           <p className="mt-4 text-gray-700 text-lg">
             Quality packaged foodstuffs & household essentials — available for pickup & delivery within Lagos.
           </p>
@@ -27,7 +27,7 @@ export default function Hero({ onShopClick }) {
 
         <motion.div initial={{ x: 30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
           <div className="rounded-3xl overflow-hidden shadow-lg">
-            <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=1400&q=80" alt="grocery shelves" className="w-full h-96 object-cover" />
+            <img src="dennis.jpg" alt="grocery shelves" className="w-full h-96 object-cover" />
           </div>
         </motion.div>
       </section>
