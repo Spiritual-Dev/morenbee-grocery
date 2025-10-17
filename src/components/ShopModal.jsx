@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
    In a larger app this data would be shared / lifted. For this single-file-ready approach duplication is fine. */
 
 const PRODUCTS = [
-  { id: 1, name: "Kullikulli", price: "₦500", img: "dennis.jpg" },
+  { id: 1, name: "Kullikulli", price: "₦500", img: "Kullikulli.jpg" },
   { id: 2, name: "Measured sugar", price: "₦900", img: "https://source.unsplash.com/600x600/?sugar" },
   { id: 3, name: "Crates of Egg", price: "₦6,000", img: "https://source.unsplash.com/600x600/?eggs" },
   { id: 4, name: "Bags of rice", price: "₦25,000", img: "https://source.unsplash.com/600x600/?rice,bag" },
