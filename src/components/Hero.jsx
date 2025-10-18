@@ -1,36 +1,59 @@
 import React from "react";
 import { motion } from "framer-motion";
+import bgImage from "../assets/Images/background.jpg";
 
 export default function Hero({ onShopClick }) {
   return (
-    <header className="pt-20">
-      <section className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 py-16">
-        <motion.div initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-morenbeBlue leading-tight">Morenbee Grocery Store</h2>
-          <p className="mt-4 text-gray-700 text-lg">
-            Quality packaged foodstuffs & household essentials — available for pickup & delivery within Lagos.
-          </p>
+    <section
+      id="hero"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-blue-900/40 to-black/70"></div>
 
-          <div className="mt-6 flex gap-4">
-            <button onClick={onShopClick} className="px-6 py-3 rounded-full bg-morenbeBlue text-white font-semibold shadow-lg hover:brightness-105">
-              Shop Now
-            </button>
-            <a href="#contact" className="px-6 py-3 rounded-full border border-gray-200 text-gray-700 font-medium">Contact Us</a>
-          </div>
+      {/* Animated Text */}
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative z-10 px-6 max-w-2xl text-white"
+      >
+        <motion.h1
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          className="text-4xl md:text-6xl font-extrabold mb-4 tracking-wide leading-tight"
+        >
+          Fresh, Packaged & Essential Goods at{" "}
+          <span className="text-yellow-300">Morenbee Grocery</span>
+        </motion.h1>
 
-          <ul className="mt-6 text-sm text-gray-600 space-y-1">
-            <li><strong>Address:</strong> 19, Olowora Street, Mafoluku, Oshodi, Lagos.</li>
-            <li><strong>Phone:</strong> 08125015031</li>
-            <li><strong>Pickup & Delivery:</strong> Available within Lagos</li>
-          </ul>
-        </motion.div>
+        <p className="text-lg md:text-xl text-blue-100 mb-8">
+          From rice to milk, biscuits to detergents — we bring quality home
+          essentials closer to you.
+        </p>
 
-        <motion.div initial={{ x: 30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
-          <div className="rounded-3xl overflow-hidden shadow-lg">
-            <img src="dennis.jpg" alt="grocery shelves" className="w-full h-96 object-cover" />
-          </div>
-        </motion.div>
-      </section>
-    </header>
+        {/* Shop Button */}
+        <motion.button
+          whileHover={{
+            scale: 1.08,
+            boxShadow: "0 0 20px rgba(255,255,255,0.5)",
+          }}
+          whileTap={{ scale: 0.95 }}
+          onClick={onShopClick}
+          className="bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-semibold px-8 py-3 rounded-full shadow-md transition-all"
+        >
+          Shop Now
+        </motion.button>
+      </motion.div>
+
+      {/* Soft glow overlay for ambiance */}
+      <div className="absolute inset-0 bg-blue-500/10 mix-blend-soft-light"></div>
+    </section>
   );
 }
