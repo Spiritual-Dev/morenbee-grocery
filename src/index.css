@@ -32,3 +32,13 @@ body::before {
   );
   z-index: -1;
 }
+body {
+  background: linear-gradient(
+    to bottom right,
+    rgba(230, 250, 230, 0.95),
+    rgba(210, 240, 220, 0.95)
+  );
+  background-attachment: fixed;
+  font-family: "Inter", sans-serif;
+  color: #222;
+}
