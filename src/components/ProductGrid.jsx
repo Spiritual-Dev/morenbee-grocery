@@ -24,7 +24,7 @@ const local = (filename) => {
 };
 
 const PRODUCTS = [
-  { id: 1, name: "Kullikulli", price: "₦500", localImg: local("kullikulli.jpg"), fallback: "https://source.unsplash.com/600x600/?kuli-kuli,peanut" },
+  { id: 1, name: "Kullikulli", price: "₦-----", localImg: local("kullikulli.jpg"), fallback: "https://source.unsplash.com/600x600/?kuli-kuli,peanut" },
   { id: 2, name: "Measured sugar", price: "₦900", localImg: local("measured-sugar.jpg"), fallback: "https://source.unsplash.com/600x600/?sugar" },
   { id: 3, name: "Crates of Egg", price: "₦6,000", localImg: local("crates-of-egg.jpg"), fallback: "https://source.unsplash.com/600x600/?eggs,crate" },
   { id: 4, name: "Bags of rice", price: "₦25,000", localImg: local("bags-of-rice.jpg"), fallback: "https://source.unsplash.com/600x600/?rice,bag" },
