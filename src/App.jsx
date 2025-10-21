@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-// Keep the page About section (for SEO, visible page content)
+import ProductGrid from "./components/ProductGrid";
 import About from "./components/About";
-import AboutModal from "./components/AboutModal"; // the pop-up version you created
+import AboutModal from "./components/AboutModal";
 import ShopModal from "./components/ShopModal";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
@@ -13,64 +13,80 @@ export default function App() {
   const [showProducts, setShowProducts] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
 
-  /**
-   * Smooth scroll helper with offset to account for fixed navbar.
-   * Adjust `offset` if your navbar height changes.
-   */
+  // Disable background scroll when modals are open
+  useEffect(() => {
+    document.body.style.overflow = showProducts || showAbout ? "hidden" : "auto";
+  }, [showProducts, showAbout]);
+
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
-    const offset = 80; // px - matches your header height (adjust if needed)
+    const offset = 80;
     const top = el.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: "smooth" });
   };
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      {/* ===== Navbar =====
-          The Navbar expects these props:
-          - onShopClick: open ShopModal
-          - onAboutClick: open AboutModal
-          - onContactClick: scroll to contact section
-      */}
-      <header className="fixed top-0 left-0 right-0 z-50">
-        <Navbar
-          onShopClick={() => setShowProducts(true)}
-          onAboutClick={() => setShowAbout(true)}
-          onContactClick={() => scrollToSection("contact")}
-        />
-      </header>
+  const handleOpenShop = () => {
+    if (!showAbout) setShowProducts(true);
+  };
 
-      {/* ===== Main (shifted down so header doesn't overlap content) ===== */}
-      <main
-        className="flex-grow bg-cover bg-center relative text-gray-800 pt-[80px]"
+  const handleOpenAbout = () => {
+    if (!showProducts) setShowAbout(true);
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col relative">
+      {/* ===== Global Static Background ===== */}
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundAttachment: "fixed",
         }}
       >
-        {/* subtle overlay so text reads well on top of background */}
-        <div className="absolute inset-0 bg-[#ffffffcc] backdrop-blur-[2px]" />
+        {/* Layer 1: soft gradient overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-blue-900/40 to-black/70"
+          aria-hidden="true"
+        ></div>
 
+        {/* Layer 2: vignette around edges */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.55) 100%)",
+          }}
+          aria-hidden="true"
+        ></div>
+      </div>
+
+      {/* ===== Navbar ===== */}
+      <header className="fixed top-0 left-0 right-0 z-50">
+        <Navbar
+          onShopClick={handleOpenShop}
+          onAboutClick={handleOpenAbout}
+          onContactClick={() => scrollToSection("contact")}
+        />
+      </header>
+
+      {/* ===== Main Content ===== */}
+      <main className="flex-grow relative text-gray-100 pt-[80px]">
         <div className="relative z-10">
-          {/* Hero: pass shop open so shop button works */}
-          <Hero onShopClick={() => setShowProducts(true)} />
-            
-
-          {/* Visible About section on the page (keeps content present) */}
+          <Hero onShopClick={handleOpenShop} />
+          <ProductGrid onShopClick={handleOpenShop} />
           <section id="about" className="py-12">
-            <About />
+            <About onOpenModal={handleOpenAbout} />
           </section>
 
-          {/* Products (ShopModal lives at top-level so it overlays entire page) */}
-          <section id="products" className="py-8">
-            <ShopModal isOpen={showProducts} onClose={() => setShowProducts(false)} />
-          </section>
-
-          {/* About modal popup (opened from navbar About) */}
+          {/* Modals */}
+          <ShopModal
+            isOpen={showProducts}
+            onClose={() => setShowProducts(false)}
+          />
           <AboutModal isOpen={showAbout} onClose={() => setShowAbout(false)} />
 
-          {/* Contact */}
+          {/* Contact Section */}
           <section id="contact" className="pb-16">
             <ContactSection />
           </section>
@@ -78,7 +94,7 @@ export default function App() {
       </main>
 
       {/* ===== Footer ===== */}
-      <footer className="bg-gradient-to-r from-blue-600 via-blue-700 to-morenbeBlue text-white">
+      <footer className="bg-gradient-to-r from-blue-600 via-blue-700 to-morenbeBlue text-white relative z-10">
         <Footer />
       </footer>
     </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import bgImage from "../assets/Images/background.jpg";
 
 export default function Hero({ onShopClick }) {
   return (
@@ -8,19 +7,8 @@ export default function Hero({ onShopClick }) {
       id="hero"
       aria-label="Hero section with shop button and tagline"
       className="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4 sm:px-6 md:px-8 lg:px-12"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
     >
-      {/* Gradient Overlay */}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-black/50 via-blue-900/40 to-black/70"
-        aria-hidden="true"
-      ></div>
-
-      {/* Animated Text */}
+      {/* Hero Content (no background here anymore) */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
@@ -60,12 +48,6 @@ export default function Hero({ onShopClick }) {
           Shop Now
         </motion.button>
       </motion.div>
-
-      {/* Decorative glow (hidden from assistive tech) */}
-      <div
-        className="absolute inset-0 bg-blue-500/10 mix-blend-soft-light"
-        aria-hidden="true"
-      ></div>
     </section>
   );
 }
