@@ -118,7 +118,7 @@ export default function AboutModal({ isOpen, onClose }) {
             </div>
 
             {/* return home button */}
-            <div className="py-5 border-t flex justify-center bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-b-3xl">
+            <div className="sticky bottom-0 border-t bg-gradient-to-r from-blue-50 via-white to-blue-50 py-4 flex justify-center rounded-b-3xl z-20">
               <motion.button
                whileHover={{ scale: 1.05 }}
                whileTap={{ scale: 0.95 }}

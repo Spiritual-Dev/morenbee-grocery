@@ -177,7 +177,7 @@ export default function ShopModal({ isOpen, onClose }) {
             </div>
 
             {/* bottom return/close area */}
-            <div className="py-5 border-t flex justify-center bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-b-3xl">
+            <div className="sticky bottom-0 border-t bg-gradient-to-r from-blue-50 via-white to-blue-50 py-4 flex justify-center rounded-b-3xl z-20">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
