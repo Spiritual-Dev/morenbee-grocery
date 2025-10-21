@@ -21,7 +21,7 @@ const PRODUCTS = [
   { id: 1, name: "Kullikulli", img: "/src/assets/Images/Kullikulli.jpg" },
   { id: 2, name: "Measured sugar", img: "/src/assets/Images/sugar.jpg" },
   { id: 3, name: "Crates of Egg", img: "/src/assets/Images/eggs.jpg" },
-  { id: 4, name: "Bags of rice", img: "/src/assets/Images/rice.jpg" },
+  { id: 4, name: "Bags of rice", img: "/src/assets/Images/bags-of-rice.jpg" },
   { id: 5, name: "Lactorich milk", img: "/src/assets/Images/lactorich.jpg" },
   { id: 6, name: "Paints of garri", img: "/src/assets/Images/garri.jpg" },
   { id: 7, name: "Classic peanuts", img: "/src/assets/Images/peanuts.jpg" },

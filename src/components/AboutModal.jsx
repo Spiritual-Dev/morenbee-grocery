@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import backgroundImg from "../assets/Images/background.jpg";
 
 const AboutModal = ({ isOpen, onClose }) => {
     useEffect(() => {
@@ -29,13 +30,13 @@ const AboutModal = ({ isOpen, onClose }) => {
           {/* Modal Content */}
           <motion.div
             className="fixed inset-0 flex items-center justify-center z-50"
-            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            initial={{ opacity: 0, scale: 0.98, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 30 }}
+            exit={{ opacity: 0, scale: 0.98, y: 10 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
           >
             <div
-              className="relative bg-white rounded-2xl shadow-xl w-[90%] max-w-4xl max-h-[85vh] overflow-y-auto p-8"
+              className="relative bg-white rounded-3xl shadow-2xl w-full max-w-6xl mx-4 sm:mx-6 md:mx-8 overflow-y-auto max-h-[85vh] z-10"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -51,7 +52,7 @@ const AboutModal = ({ isOpen, onClose }) => {
                 About Morenbee Grocery
               </h2>
 
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-1 text-gray-700 leading-relaxed">
                 <p>
                   Morenbee Grocery Store is dedicated to supplying top-quality sealed and packaged foods — 
                   from staple grains like rice and beans to cereals, biscuits, and household essentials. 
