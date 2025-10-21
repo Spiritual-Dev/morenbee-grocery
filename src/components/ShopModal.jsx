@@ -177,12 +177,12 @@ export default function ShopModal({ isOpen, onClose }) {
             </div>
 
             {/* bottom return/close area */}
-            <div className="py-6 border-t flex justify-center bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-b-3xl">
+            <div className="py-5 border-t flex justify-center bg-gradient-to-r from-blue-50 via-white to-blue-50 rounded-b-3xl">
               <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={handleReturnHome}
-                className="px-8 py-2 bg-morenbeBlue text-white rounded-full font-semibold shadow-md transition"
+                className="px-6 py-2 bg-morenbeBlue text-white rounded-full text-sm font-semibold shadow-md hover:bg-blue-800 transition"
               >
                 ← Return to Homepage
               </motion.button>
